@@ -1,0 +1,131 @@
+<!DOCTYPE HTML>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Personal Growth Companion</title>
+    <link href="css/style.css" rel="stylesheet">
+</head>
+<body>
+    <div class="wrapper">
+        <!-- Header section with user greeting and current date -->
+        <header class="site-header">
+            <h1>My Personal Growth Companion</h1>
+            <p class="user-greeting">Hello, Bartosz!</p>
+            <p class="entry-timestamp">Today's Entry: <time datetime="2024-08-28T14:30">Wednesday, August 28th @ 2:30 PM</time></p>
+        </header>
+
+        <!-- Summary section displaying average sleep, hydration, and mood data -->
+        <section id="summary" class="summary-section">
+            <h2>Your Daily Progress Summary</h2>
+            <div class="summary-item">
+                <h3>Average Sleep per Day</h3>
+                <p><span id="avg-sleep">0</span> hours / day</p>
+                <div class="mini-chart" id="sleep-chart"></div>
+            </div>
+            <div class="summary-item">
+                <h3>Average Hydration per Day</h3>
+                <p><span id="avg-hydration">0</span> glasses / day (<span id="avg-total-water">0</span> ml / day)</p>
+                <div class="mini-chart" id="hydration-chart"></div>
+            </div>
+            <div id="mood-summary" class="summary-item">
+                <h3>Mood Frequency (Days per Mood)</h3>
+                <div id="mood-chart-container">
+                    <div id="mood-chart"></div>
+                </div>
+            </div>
+        </section>
+
+        <main class="content-area">
+            <div class="left-column">
+                <!-- Inspiration section with daily quote and image -->
+                <section class="inspiration-box">
+                    <h2>Today's Spark</h2>
+                    <img src="https://picsum.photos/400/300?nature" alt="Daily inspiration" class="inspiration-image">
+                    <blockquote class="daily-quote">
+                        <p>"The future belongs to those who believe in the beauty of their dreams." - Eleanor Roosevelt</p>
+                    </blockquote>
+                </section>
+
+                <!-- Reflection area for journaling -->
+                <section class="reflection-area">
+                    <h2>Reflect &amp; Grow</h2>
+                    <textarea rows="6" placeholder="What's on your mind today?"></textarea>
+                </section>
+
+                <!-- Gratitude list section -->
+                <section class="gratitude-list">
+                    <h2>Three Rays of Sunshine</h2>
+                    <ol>
+                        <li><input type="text" placeholder="I appreciate..."></li>
+                        <li><input type="text" placeholder="I'm thankful for..."></li>
+                        <li><input type="text" placeholder="I'm grateful that..."></li>
+                    </ol>
+                </section>
+            </div>
+
+            <div class="right-column">
+                <!-- Wellness tracker for sleep -->
+                <section class="wellness-tracker">
+                    <h2>Wellness Check</h2>
+                    <div class="sleep-log">
+                        <label for="sleep-duration">Hours of restful sleep:</label>
+                        <input type="number" id="sleep-duration" min="0" max="12" step="0.5" value="7.5">
+                        <div class="sleep-quality">
+                            <!-- SVG for sleep quality visualization -->
+                            <svg width="120" height="120" viewBox="0 0 120 120">
+                                <circle cx="60" cy="60" r="54" fill="none" stroke="#e0e0e0" stroke-width="12"/>
+                                <circle cx="60" cy="60" r="54" fill="none" stroke="#4CAF50" stroke-width="12"
+                                        stroke-dasharray="339.292" stroke-dashoffset="0"/>
+                                <text x="60" y="70" text-anchor="middle" fill="#333" font-size="24">7.5h</text>
+                            </svg>
+                        </div>
+                    </div>
+                </section>
+
+                <!-- Emotion palette for mood tracking -->
+                <section class="emotion-palette">
+                    <h2>Emotional Palette</h2>
+                    <div class="mood-selectors">
+                        <!-- Mood checkboxes -->
+                        <label><input type="checkbox" name="mood" value="joyful"> Joyful</label>
+                        <label><input type="checkbox" name="mood" value="peaceful"> Peaceful</label>
+                        <label><input type="checkbox" name="mood" value="energized"> Energized</label>
+                        <label><input type="checkbox" name="mood" value="curious"> Curious</label>
+                        <label><input type="checkbox" name="mood" value="focused"> Focused</label>
+                        <label><input type="checkbox" name="mood" value="anxious"> Anxious</label>
+                        <label><input type="checkbox" name="mood" value="frustrated"> Frustrated</label>
+                        <label><input type="checkbox" name="mood" value="melancholy"> Melancholy</label>
+                    </div>
+                    <div class="mood-spectrum">
+                        <div class="color-bar"></div>
+                    </div>
+                </section>
+
+                <!-- Goal tracker for daily aspirations -->
+                <section class="goal-tracker">
+                    <h2>Today's Aspirations</h2>
+                    <ul>
+                        <li><input type="checkbox"> Practice mindfulness for 15 minutes</li>
+                        <li><input type="checkbox"> Complete a chapter of my book</li>
+                        <li><input type="checkbox"> Take a refreshing walk outside</li>
+                        <li><input type="checkbox"> Connect with a friend or family member</li>
+                    </ul>
+                </section>
+
+                <!-- Hydration monitor -->
+                <section class="hydration-monitor">
+                    <h2>Hydration Station</h2>
+                    <label for="water-intake">Glasses of water (250ml each):</label>
+                    <input type="number" id="water-intake" min="0" max="12" value="3">
+                    <div class="water-visual">
+                        <div class="water-level" style="height: 37.5%;"></div>
+                        <p class="water-text">3/12</p>
+                    </div>
+                    <p>Total water: <span id="total-water">750</span> ml</p>
+                </section>
+            </div>
+        </main>
+    </div>
+    <script src="js/main.js"></script>
+</body>
+</html>
